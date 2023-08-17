@@ -12,4 +12,8 @@ https://docs.flutter.dev/get-started/codelab-web
 
 ### Welcome Screen
 
-![Welcom Screen](./app_demos/welcome_screen.mov)
+![Welcome Screen](./app_demos/welcome_screen.mov)
+
+### Progress Indicator
+
+![Progress Indicator](./app_demos/progess_indicator.mov)
