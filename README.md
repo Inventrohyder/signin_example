@@ -17,3 +17,7 @@ https://docs.flutter.dev/get-started/codelab-web
 ### Progress Indicator
 
 ![Progress Indicator](./app_demos/progess_indicator.mov)
+
+### Animated Progress
+
+![Animated Progress](./app_demos/animated_progress.mov)
