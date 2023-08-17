@@ -10,19 +10,21 @@ class SignUpApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Sign-in Example",
-      routes: {
-        '/': (context) => const SignUpScreen(),
-      },
-      theme: ThemeData(
-        useMaterial3: true,
-      )
-    );
+        title: "Sign-in Example",
+        routes: {
+          '/': (context) => const SignUpScreen(),
+          '/welcome': (context) => const WelcomeScreen(),
+        },
+        theme: ThemeData(
+          useMaterial3: true,
+        ));
   }
 }
 
 class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key,});
+  const SignUpScreen({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +42,9 @@ class SignUpScreen extends StatelessWidget {
 }
 
 class SignUpForm extends StatefulWidget {
-  const SignUpForm({super.key,});
+  const SignUpForm({
+    super.key,
+  });
 
   @override
   State<SignUpForm> createState() => _SignUpFormState();
@@ -52,6 +56,10 @@ class _SignUpFormState extends State<SignUpForm> {
   final _usernameTextController = TextEditingController();
 
   final double _formProgress = 0;
+
+  void _showWelcomeScreen() {
+    Navigator.of(context).pushNamed("/welcome",);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -82,11 +90,31 @@ class _SignUpFormState extends State<SignUpForm> {
               decoration: const InputDecoration(hintText: 'Username'),
             ),
           ),
-          const TextButton(
-            onPressed: null,
-            child: Text('Sign up'),
+           TextButton(
+            onPressed: _showWelcomeScreen,
+            child: const Text('Sign up'),
           ),
         ],
+      ),
+    );
+  }
+
+
+}
+
+class WelcomeScreen extends StatelessWidget {
+  const WelcomeScreen({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Text(
+          'Welcome!',
+          style: Theme.of(context).textTheme.displayMedium,
+        ),
       ),
     );
   }
